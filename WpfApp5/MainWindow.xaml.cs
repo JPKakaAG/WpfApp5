@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace WpfApp5
 {
@@ -32,19 +33,19 @@ namespace WpfApp5
 
         private void btnInfo_click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("алё");
+            MessageBox.Show("Выполнил лучший разработчик: Девяткин Вадим Евгеньевич\r\nПрактическая №5\r\nСоздать класс Pair (пара четных чисел). Создать необходимые методы и свойства.Определить метод перемножения пар(а, b) * (с, d) = (а * c, b * d).Создать перегруженный метод для удвоения пары чисел.");
         }
 
         private void btnDa_click(object sender, RoutedEventArgs e)
         {
-            string input1 = "12,345";
-            string result1 = input.Replace(",", "");
-            if (int.TryParse(tbA.Text, out int A) && int.TryParse(tbB.Text, out int B))
+            string result1 = tbA.Text.Replace(" ", "");
+            string result2 = tbB.Text.Replace(" ", "");
+            if (int.TryParse(result1, out int A) && int.TryParse(result2, out int B))
             {
                 string userInput1 = tbA.Text;
                 string userInput2 = tbB.Text;
-                string[] numbersArray1 = userInput1.Split(',');
-                string[] numbersArray2 = userInput2.Split(',');
+                string[] numbersArray1 = userInput1.Split(' ');
+                string[] numbersArray2 = userInput2.Split(' ');
 
                 if (numbersArray1.Length == 2 && numbersArray2.Length == 2)
                 {
@@ -56,14 +57,14 @@ namespace WpfApp5
                     Pair pair1 = new Pair(a, b);
                     Pair pair2 = new Pair(c, d);
                     Pair multipliedPair = pair1.Multiply(pair2);
-                    tbRes1.Text = ($"Перемножениe пар: ({multipliedPair.First}, {multipliedPair.Second})");
+                    tbRes1.Text = ($"Перемножениe пар {a}*{c}, {b}*{d} = {multipliedPair.First}, {multipliedPair.Second}");
 
                     pair1.Double();
-                    tbRes2.Text = ($"Удвоение первой пары чисел ({pair1.First}, {pair1.Second})");
+                    tbRes2.Text = ($"Удвоение первой(A) пары чисел ({pair1.First}, {pair1.Second})");
                 }
                 else
                 {
-                    MessageBox.Show("Введите по 2 значения через пробел");
+                    MessageBox.Show("Введите по 2 числа через пробел например: 1 2");
                 }
             }
             else
