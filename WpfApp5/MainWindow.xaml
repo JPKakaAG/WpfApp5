@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="203*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="116*"/>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="110*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnExit" Click="btnExit_click" Content="Выход" HorizontalAlignment="Center" VerticalAlignment="Top" Height="22" Width="105" Grid.Column="3" Grid.Row="3" Margin="0,55,0,0"/>
+        <Button x:Name="btnInfo" Click="btnInfo_click" Grid.Column="3" Content="О программе" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="tbA" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="0,58,0,0"/>
+        <TextBox x:Name="tbB" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="0,58,0,0"/>
+        <Label Grid.Column="1" Content="Введите число A" HorizontalAlignment="Center" Margin="0,32,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+        <Label Grid.Column="2" Content="Введите число B" HorizontalAlignment="Center" Margin="0,32,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbRes1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Grid.Column="2" IsReadOnly="True" Margin="0,22,0,0" Grid.Row="2"/>
+        <TextBox x:Name="tbRes2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Grid.Column="2" IsReadOnly="True" Margin="0,57,0,0" Grid.Row="2"/>
+        <Button x:Name="btnDa" Click="btnDa_click" Grid.Column="1" Content="Решение" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="43" Width="77"/>
+
     </Grid>
+
+
 </Window>
